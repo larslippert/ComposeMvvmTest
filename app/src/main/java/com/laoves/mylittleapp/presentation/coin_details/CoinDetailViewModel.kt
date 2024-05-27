@@ -10,12 +10,15 @@ import com.laoves.mylittleapp.common.Resource
 import com.laoves.mylittleapp.domain.model.CoinDetail
 import com.laoves.mylittleapp.domain.use_case.get_coin.GetCoinUseCase
 import com.laoves.mylittleapp.domain.use_case.get_coins.GetCoinsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
-class CoinDetailViewModel(
+@HiltViewModel
+class CoinDetailViewModel @Inject constructor(
     private val getCoinUseCase: GetCoinUseCase,
-    private val savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     // Only the ViewModel can change state

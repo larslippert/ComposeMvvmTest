@@ -6,10 +6,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.laoves.mylittleapp.common.Resource
 import com.laoves.mylittleapp.domain.use_case.get_coins.GetCoinsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
-class CoinListViewModel(private val getCoinsUseCase: GetCoinsUseCase) : ViewModel() {
+@HiltViewModel
+class CoinListViewModel @Inject constructor(private val getCoinsUseCase: GetCoinsUseCase) : ViewModel() {
 
     // Only the ViewModel can change state
     private val _state = mutableStateOf(CoinListState())
