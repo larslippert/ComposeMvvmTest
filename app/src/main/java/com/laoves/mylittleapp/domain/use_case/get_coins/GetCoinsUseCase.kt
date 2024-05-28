@@ -16,7 +16,7 @@ class GetCoinsUseCase @Inject constructor(private val repository: CoinRepository
             emit(Resource.Loading())
             val coins = repository.getCoins().map { it.toCoin() }
             emit(Resource.Success(coins))
-        } catch(e: HttpException) {
+        } catch (e: HttpException) {
             emit(Resource.Error(e.localizedMessage ?: "Unknown http error"))
         } catch (e: IOException) {
             emit(Resource.Error(e.localizedMessage ?: "Unknown IO error"))
