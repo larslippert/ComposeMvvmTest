@@ -19,7 +19,6 @@ fun CoinInventoryScreen(
 ) {
     val state = viewModel.state.value
 
-    println("STATE: ${state.coins.size}")
     Box(
         modifier = Modifier
             .fillMaxSize(),
@@ -31,8 +30,8 @@ fun CoinInventoryScreen(
             CircularProgressIndicator()
         } else if (state.coins.isNotEmpty()) {
             Text(
-                text = "Hey look a coin: ${state.coins[0].name}",
-                modifier = Modifier.clickable { navController.navigate(Screen.CoinDetailScreen.route + "/${state.coins[0]}") },
+                text = "I just fetched ${state.coins.size} coins",
+                modifier = Modifier.clickable { navController.navigate(Screen.CoinDetailScreen.route + "/${state.coins[0].id}") },
             )
         } else {
             Text(
