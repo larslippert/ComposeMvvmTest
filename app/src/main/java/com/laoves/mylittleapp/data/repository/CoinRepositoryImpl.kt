@@ -1,8 +1,8 @@
 package com.laoves.mylittleapp.data.repository
 
-import com.laoves.mylittleapp.data.remote.CoinApi
-import com.laoves.mylittleapp.data.remote.dto.CoinDetailDto
-import com.laoves.mylittleapp.data.remote.dto.CoinDto
+import com.laoves.mylittleapp.data.remote.coin.CoinApi
+import com.laoves.mylittleapp.data.remote.coin.dto.CoinDetailDto
+import com.laoves.mylittleapp.data.remote.coin.dto.CoinDto
 import com.laoves.mylittleapp.domain.repository.CoinRepository
 
 class CoinRepositoryImpl(private val api: CoinApi) : CoinRepository {

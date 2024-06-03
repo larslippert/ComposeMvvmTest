@@ -1,7 +1,7 @@
 package com.laoves.mylittleapp.domain.repository
 
-import com.laoves.mylittleapp.data.remote.dto.CoinDetailDto
-import com.laoves.mylittleapp.data.remote.dto.CoinDto
+import com.laoves.mylittleapp.data.remote.coin.dto.CoinDetailDto
+import com.laoves.mylittleapp.data.remote.coin.dto.CoinDto
 
 interface CoinRepository {
 

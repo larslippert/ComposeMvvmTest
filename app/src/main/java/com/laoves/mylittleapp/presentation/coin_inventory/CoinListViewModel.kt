@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.laoves.mylittleapp.common.Resource
-import com.laoves.mylittleapp.domain.use_case.get_coins.GetCoinsUseCase
+import com.laoves.mylittleapp.domain.use_case.coin.get_coins.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

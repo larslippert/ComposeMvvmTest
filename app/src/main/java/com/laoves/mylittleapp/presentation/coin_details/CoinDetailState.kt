@@ -1,7 +1,6 @@
 package com.laoves.mylittleapp.presentation.coin_details
 
-import com.laoves.mylittleapp.domain.model.Coin
-import com.laoves.mylittleapp.domain.model.CoinDetail
+import com.laoves.mylittleapp.domain.model.coin.CoinDetail
 
 data class CoinDetailState(
     val isLoading: Boolean = false,

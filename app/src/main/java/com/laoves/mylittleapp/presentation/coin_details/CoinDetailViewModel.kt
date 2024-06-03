@@ -7,9 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.laoves.mylittleapp.common.Constants.PARAM_COIN_ID
 import com.laoves.mylittleapp.common.Resource
-import com.laoves.mylittleapp.domain.model.CoinDetail
-import com.laoves.mylittleapp.domain.use_case.get_coin.GetCoinUseCase
-import com.laoves.mylittleapp.domain.use_case.get_coins.GetCoinsUseCase
+import com.laoves.mylittleapp.domain.use_case.coin.get_coin.GetCoinUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

@@ -1,6 +1,7 @@
 package com.laoves.mylittleapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,8 +14,10 @@ import androidx.navigation.compose.rememberNavController
 import com.laoves.mylittleapp.presentation.Screen
 import com.laoves.mylittleapp.presentation.coin_details.CoinDetailScreen
 import com.laoves.mylittleapp.presentation.coin_inventory.CoinInventoryScreen
+import com.laoves.mylittleapp.presentation.pokemon_details.PokemonDetailScreen
 import com.laoves.mylittleapp.presentation.ui.theme.MyLittleAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.random.Random
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -27,9 +30,13 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
+                    val randomNumber = Random.nextInt(1,152).toString()
+
+                    Log.d("MAIN ACTIVITY", "Number $randomNumber")
+
                     NavHost(
                         navController = navController,
-                        startDestination = Screen.CoinInventoryScreen.route,
+                        startDestination = Screen.PokemonDetailScreen.route + "/$randomNumber",
                     ) {
                         composable(
                             route = Screen.CoinInventoryScreen.route
@@ -40,6 +47,11 @@ class MainActivity : ComponentActivity() {
                             route = Screen.CoinDetailScreen.route + "/{coinId}"
                         ) {
                             CoinDetailScreen(navController = navController)
+                        }
+                        composable(
+                            route = Screen.PokemonDetailScreen.route + "/{pokemonId}"
+                        ) {
+                            PokemonDetailScreen(navController = navController)
                         }
                     }
                 }

@@ -1,6 +1,6 @@
 package com.laoves.mylittleapp.presentation.coin_inventory
 
-import com.laoves.mylittleapp.domain.model.Coin
+import com.laoves.mylittleapp.domain.model.coin.Coin
 
 data class CoinListState(
     val isLoading: Boolean = false,
